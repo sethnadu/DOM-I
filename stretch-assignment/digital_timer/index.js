@@ -1,29 +1,49 @@
+//timer variables
+
 let timerStartTens = 0;
+let timerStartOnes = 0;
+let timerStartmsHundreds = 0;
+let timerStartmsTens = 0;
+
+
+
+//digit variables
+let secondTens = document.getElementById('secondTens');
+let secondOnes = document.getElementById('secondOnes');
+let msHundreds = document.getElementById('msHundreds');
+let msTens = document.getElementById('msTens');
+
+
+
+
+// Tens
 let timerCountTens = setInterval(() => {
- document.getElementById('secondTens').textContent = 1 + timerStartTens;
- timerStartTens +=1;
- if (timerStartTens >= 1) {
-    clearInterval(timerCountTens);
-    document.getElementById('secondTens').style.color = "red";
-    document.getElementById('colon').style.color = "red";
+    secondTens.textContent = 1 + timerStartTens;
+    timerStartTens +=1;
+    if (timerStartTens >= 1) {
+        clearInterval(timerCountTens);
+        document.getElementById('secondTens').style.color = "red";
+        document.getElementById('colon').style.color = "red";
 
  }
  }, 10000);
 
-let timerStartOnes = 0;
+
+// Ones
 let timerCountOnes = setInterval(() => {
- document.getElementById('secondOnes').textContent = 1 + timerStartOnes;
- timerStartOnes +=1;
- if (timerStartOnes >= 10) {
-    clearInterval(timerCountOnes);
-    document.getElementById('secondOnes').style.color = "red";
-    document.getElementById('secondOnes').textContent = '0';
+    secondOnes.textContent = 1 + timerStartOnes;
+    timerStartOnes +=1;
+    if (timerStartOnes >= 10) {
+        clearInterval(timerCountOnes);
+        document.getElementById('secondOnes').style.color = "red";
+        document.getElementById('secondOnes').textContent = '0';
  }
  }, 1000);
 
-let timerStartmsHundreds = 0;
+
+// ms Hundreds
 let timerCountmsHundreds = setInterval(() => {
-    document.getElementById('msHundreds').textContent = 1 + timerStartmsHundreds;
+    msHundreds.textContent = 1 + timerStartmsHundreds;
     timerStartmsHundreds +=1;
     if (timerStartmsHundreds >= 9) {
         timerStartmsHundreds = -1;
@@ -35,9 +55,10 @@ let timerCountmsHundreds = setInterval(() => {
     }
     }, 100);   
 
-let timerStartmsTens = 0;
+
+// ms Tens
 let timerCountmsTens = setInterval(() => {
-    document.getElementById('msTens').textContent = 1 + timerStartmsTens;
+    msTens.textContent = 1 + timerStartmsTens;
     timerStartmsTens +=1;
     if (timerStartmsTens >= 10) {
         timerStartmsTens= 0;
